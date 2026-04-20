@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7n7f2htx2hha"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_s4dbu"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_s4dbu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 306.0
+offset_bottom = 72.0
+text = "Hello, Godot 2D!"
