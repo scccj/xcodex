@@ -5,9 +5,94 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_s4dbu")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 18.0
-offset_top = 18.0
-offset_right = 306.0
-offset_bottom = 72.0
-text = "Hello, Godot 2D!"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -220.0
+offset_right = 250.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/UI/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/UI/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "回合流程演示"
+horizontal_alignment = 1
+
+[node name="RoundLabel" type="Label" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "当前轮次：第 1 轮"
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "请先选择下一步操作。"
+autowrap_mode = 3
+
+[node name="SelectedActionLabel" type="Label" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "已选操作：（未选择）"
+
+[node name="Options" type="HBoxContainer" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="AttackButton" type="Button" parent="CanvasLayer/UI/Panel/Margin/VBox/Options"]
+layout_mode = 2
+text = "选择进攻"
+
+[node name="DefendButton" type="Button" parent="CanvasLayer/UI/Panel/Margin/VBox/Options"]
+layout_mode = 2
+text = "选择防御"
+
+[node name="ChargeButton" type="Button" parent="CanvasLayer/UI/Panel/Margin/VBox/Options"]
+layout_mode = 2
+text = "选择蓄力"
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "点击出牌"
+disabled = true
+
+[node name="ResolveButton" type="Button" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "结算"
+disabled = true
+
+[node name="NextRoundButton" type="Button" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "下一轮"
+disabled = true
+
+[node name="LogLabel" type="Label" parent="CanvasLayer/UI/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "操作记录："
+autowrap_mode = 3
+vertical_alignment = 0
